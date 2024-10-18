@@ -1,9 +1,24 @@
 #!/usr/bin/python3
-minOperations = __import__('0-minoperations').minOperations
+"""
+This module calculates the minimum number of operations required
+to result in exactly n 'H' characters using only Copy All and Paste.
+"""
 
-print(minOperations(0))    # 0
-print(minOperations(1))    # 0
-print(minOperations(4))    # 4
-print(minOperations(12))   # 7
-print(minOperations(19170307)) # Expected value according to problem logic
+def minOperations(n):
+    """
+    Returns the minimum number of operations to get exactly n 'H' characters.
+    
+    If n is impossible to achieve or is less than 1, return 0.
+    """
+    if n <= 1:
+        return 0
+    
+    operations = 0
+    divisor = 2
+    while n > 1:
+        while n % divisor == 0:
+            operations += divisor
+            n //= divisor
+        divisor += 1
+    return operations
 
