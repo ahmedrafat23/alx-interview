@@ -5,6 +5,7 @@ This module contains the function to calculate
 the perimeter of an island in a grid.
 """
 
+
 def island_perimeter(grid):
     """
     Calculate the perimeter of an island represented in a grid.
@@ -27,7 +28,7 @@ def island_perimeter(grid):
                 # Check if the cell above is land
                 if r > 0 and grid[r - 1][c] == 1:
                     perimeter -= 2  # Subtract shared edge
-                
+
                 # Check if the cell to the left is land
                 if c > 0 and grid[r][c - 1] == 1:
                     perimeter -= 2  # Subtract shared edge
